@@ -51,20 +51,21 @@
 			<h3>Designate your sauces</h3>
 			<div th:each="ingredient : ${sauce}">
 				<input name="ingredients" type="checkbox" th:value="${ingredient.id}"/>
-				<span th:text="${ingredient.name}">INGREDIENT</span>
+				<span th:text="${ingredient.name}">INGREDIENT</span><br/>
 			</div>
 		</div>
 	</div>
 	
 	<div>	
 	<h3>Name your taco creation</h3>
-	<input type="text" th:filed="*{name}"/>
-	<br/>
-	<button>Submit your taco</button>
+	<input type="text" th:field="*{name}"/>
 	<span th:text="${#fields.hasErrors('name')}">xxx</span>
 	<span class="validationError"
-	th:if="${#fields.hasErrors('name')}"
-	th:errors="*{name}">Name Error</span>
+		th:if="${#fields.hasErrors('name')}"
+		th:errors="*{name}">Name Error</span>
+	<br/>
+	
+	<button>Submit your taco</button>
 	</div>
 	
 	</form>
